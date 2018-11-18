@@ -1,5 +1,13 @@
 # IPTools
 
+##Important Note
+This version is a clone which has been altered and does not matches the original version.
+The changes are:
+- Documentation has been added to make the features more clear.
+- In class IP the `strcmppton` function has been added to make cmparison of IP-Addresses more easy.
+- In the test cases there have been added some extra tests.
+- The PHP-code does not follow the `AllmanStyleBraces` brackets notation
+
 PHP Library for manipulating network addresses (IPv4 and IPv6).
 
 [![Build Status](https://travis-ci.org/S1lentium/IPTools.svg)](https://travis-ci.org/S1lentium/IPTools)

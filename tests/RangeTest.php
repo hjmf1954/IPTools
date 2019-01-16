@@ -35,6 +35,7 @@ class RangeTest extends \PHPUnit_Framework_TestCase {
    }
 
    /**
+    * Tests range of IP-Addresses (with CIDR)
     * @dataProvider getTestNetworksData
     */
    public function testGetNetworks($data, $expected) {
@@ -82,18 +83,23 @@ class RangeTest extends \PHPUnit_Framework_TestCase {
       );
    }
 
+   /**
+    * Getter for 'testGetNetworks'.
+    * @see testGetNetworks
+    * @return [type] [description]
+    */
    public function getTestNetworksData() {
       return array(
-         array('192.168.1.*', array('192.168.1.0/24')),
-         array('192.168.1.208-192.168.1.255', array(
+         array('192.168.1.*', array('192.168.1.0/24')),  // Wildcart
+         array('192.168.1.208-192.168.1.255', array(     // Range
             '192.168.1.208/28',
             '192.168.1.224/27',
          )),
-         array('192.168.1.0-192.168.1.191', array(
+         array('192.168.1.0-192.168.1.191', array(       // Range
             '192.168.1.0/25',
             '192.168.1.128/26',
          )),
-         array('192.168.1.125-192.168.1.126', array(
+         array('192.168.1.125-192.168.1.126', array(     // Range
             '192.168.1.125/32',
             '192.168.1.126/32',
          )),
@@ -147,8 +153,15 @@ class RangeTest extends \PHPUnit_Framework_TestCase {
 
    public function getTestCountData() {
       return array(
-         array('127.0.0.0/31', 2),
-         array('2001:db8::/120', 256),
+         array('127.0.0.0/31'          , 2),
+         array('2001:db8::/120'        , 256),
+         array('2a02:8108:4:3:2:1::'   ,   1),
+         array('2a02:8108:4:3:2::/127' ,   2),
+         array('2a02:8108:4:3:2::/126' ,   4),
+         array('2a02:8108:4:3:2::/125' ,   8),
+         array('2a02:8108:4:3:2::/124' ,  16),
+         array('2a02:8108:4:3:2::/120' , 256),
+         array('2a02:8108::/31'        , 9223372036854775807),
       );
    }
 

@@ -1,14 +1,17 @@
 # IPTools
 
-## Important Note for this cloned version
-This version is a clone which has been altered and does not matches the original version.
-The changes are:
-- Documentation has been added to make the features more clear.
-- In class IP the `strcmppton` function has been added to make cmparison of IP-Addresses more easy.
-- In the test cases there have been added some extra tests.
-- The PHP-code does not follow the `AllmanStyleBraces` brackets notation
+PHP Library for manipulating network addresses (IPv4 and IPv6), ranges and CIDRs.
 
-PHP Library for manipulating network addresses (IPv4 and IPv6).
+## Important Note for this cloned version
+This version is a clone which has been altered and does not match the original version anymore.
+The changes are:
+- Documentation has been added to make the features/functions more clear.
+- In class IP the `strcmppton` function has been added to make cmparison of IP-Addresses more easy.
+- In the UnitTest extra testcases have been added for clearity and for completeness.
+- The PHP-code does not follow the `AllmanStyleBraces` brackets notation.
+- The file `phpunit.xml.dist` contains a not used option `syntaxCheck` which has been removed.
+
+
 
 [![Build Status](https://travis-ci.org/S1lentium/IPTools.svg)](https://travis-ci.org/S1lentium/IPTools)
 [![Coverage Status](https://coveralls.io/repos/S1lentium/IPTools/badge.svg?branch=master&service=github)](https://coveralls.io/github/S1lentium/IPTools?branch=master)
